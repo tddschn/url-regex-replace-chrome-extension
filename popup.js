@@ -3,16 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   prependButton.addEventListener("click", function () {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      if (tabs.length === 0) {
-        console.log("No active tabs found.");
-        return;
-      }
-
       const prefix = document.getElementById("prefix").value;
-      const url = new URL(tabs[0].url);
-      const newUrl = prefix + url;
+      const tabId = tabs[0].id;
+      const currentUrl = tabs[0].url;
+      const newUrl = prefix + currentUrl;
 
-      chrome.tabs.update(tabs[0].id, { url: newUrl });
+      chrome.tabs.update(tabId, { url: newUrl });
     });
   });
 });
