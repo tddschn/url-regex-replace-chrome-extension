@@ -39,7 +39,7 @@ A `Makefile` is included for packaging the extension. Use the following commands
 
 ## Support
 
-Open an issue [here](./issues/new).
+Open an issue [here](https://github.com/tddschn/prepend-url-chrome-extension/issues/new).
 
 <!-- If you encounter any issues or have suggestions for improvements, please submit them to the [issue tracker](https://chrome.google.com/webstore/detail/prepend-url/nkohlbebkognioabnnjchnchdapolofb/support). -->
 
