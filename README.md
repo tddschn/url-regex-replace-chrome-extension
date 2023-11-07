@@ -46,3 +46,7 @@ Open an issue [here](https://github.com/tddschn/prepend-url-chrome-extension/iss
 <!-- ## License -->
 <!---->
 <!-- This project is open-source and available under the [MIT License](LICENSE.md). -->
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
