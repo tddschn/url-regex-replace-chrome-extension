@@ -3,7 +3,7 @@
   "name": "Prepend URL",
   "version": "1.0",
   "description": "A Chrome extension that prepends a configurable pre-defined string to the URL and reloads the page.",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "popup.html"
   },
