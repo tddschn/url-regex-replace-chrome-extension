@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Prepend URL",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Chrome extension that prepends a configurable pre-defined string to the URL and reloads the page.",
   "permissions": ["activeTab", "storage"],
   "action": {
