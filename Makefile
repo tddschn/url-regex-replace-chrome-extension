@@ -10,6 +10,8 @@ list:
 	@unzip -l $(EXTENSION_NAME)-$(VERSION).zip
 
 clean:
-	@rm -v $(EXTENSION_NAME)-$(VERSION).zip
+	[[ -f $(EXTENSION_NAME)-$(VERSION).zip ]] && echo "Removing $(EXTENSION_NAME)-$(VERSION).zip..." || echo "No $(EXTENSION_NAME)-$(VERSION).zip to remove."
+	[[ -f $(EXTENSION_NAME)-$(VERSION).zip ]] && rm -v $(EXTENSION_NAME)-$(VERSION).zip || echo "No $(EXTENSION_NAME)-$(VERSION).zip to remove."
+	# @rm -v $(EXTENSION_NAME)-$(VERSION).zip
 
 .PHONY: package list clean
