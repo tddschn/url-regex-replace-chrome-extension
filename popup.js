@@ -1,28 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const prependButton = document.getElementById("prepend");
-  const prefixInput = document.getElementById("prefix");
+  const findInput = document.getElementById("find");
+  const replaceInput = document.getElementById("replace");
+  const replaceButton = document.getElementById("replace-url");
 
-  // Load the saved prefix value when the popup is opened.
-  chrome.storage.sync.get("savedPrefix", function (data) {
-    if (data.savedPrefix) {
-      prefixInput.value = data.savedPrefix;
+  // Load the saved find and replace values.
+  chrome.storage.sync.get(["savedFind", "savedReplace"], function (data) {
+    if (data.savedFind) {
+      findInput.value = data.savedFind;
+    }
+    if (data.savedReplace) {
+      replaceInput.value = data.savedReplace;
     }
   });
 
-  // Listen for changes in the input field to save them.
-  prefixInput.addEventListener("change", function () {
-    const prefix = prefixInput.value;
-    chrome.storage.sync.set({ "savedPrefix": prefix });
+  // Save the find and replace values.
+  findInput.addEventListener("change", function () {
+    chrome.storage.sync.set({ "savedFind": findInput.value });
   });
 
-  prependButton.addEventListener("click", function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      const prefix = prefixInput.value;
-      const tabId = tabs[0].id;
-      const currentUrl = tabs[0].url;
-      const newUrl = prefix + currentUrl;
+  replaceInput.addEventListener("change", function () {
+    chrome.storage.sync.set({ "savedReplace": replaceInput.value });
+  });
 
-      chrome.tabs.update(tabId, { url: newUrl });
+  replaceButton.addEventListener("click", function () {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      const findPattern = new RegExp(findInput.value);
+      const replaceValue = replaceInput.value;
+      const currentUrl = tabs[0].url;
+      const newUrl = currentUrl.replace(findPattern, replaceValue);
+
+      chrome.tabs.update(tabs[0].id, { url: newUrl });
     });
   });
 });

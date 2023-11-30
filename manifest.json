@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Prepend URL",
-  "version": "1.1.1",
-  "description": "A Chrome extension that prepends a configurable pre-defined string to the URL and reloads the page.",
+  "name": "URL Regex Replace",
+  "version": "1.2.0",
+  "description": "A Chrome extension that allows users to perform regex find and replace on the current tab's URL.",
   "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "popup.html"

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Prepend URL</title>
+    <title>URL Regex Replace</title>
     <script src="popup.js"></script>
   </head>
   <body>
-    <label for="prefix">Prefix:</label>
-    <input type="text" id="prefix" value="https://sci-hub.ru/" />
+    <label for="find">Find (Regex):</label>
+    <input type="text" id="find" value="^" />
+    <br />
+    <label for="replace">Replace:</label>
+    <input type="text" id="replace" />
     <br /><br />
-    <button id="prepend">Prepend URL</button>
+    <button id="replace-url">Replace in URL</button>
   </body>
 </html>
