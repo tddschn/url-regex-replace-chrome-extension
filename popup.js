@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Save the find and replace values.
   findInput.addEventListener("change", function () {
-    chrome.storage.sync.set({ "savedFind": findInput.value });
+    chrome.storage.sync.set({ savedFind: findInput.value });
   });
 
   replaceInput.addEventListener("change", function () {
-    chrome.storage.sync.set({ "savedReplace": replaceInput.value });
+    chrome.storage.sync.set({ savedReplace: replaceInput.value });
   });
 
   replaceButton.addEventListener("click", function () {
@@ -27,8 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const findPattern = new RegExp(findInput.value);
       const replaceValue = replaceInput.value;
       const currentUrl = tabs[0].url;
-      const newUrl = currentUrl.replace(findPattern, replaceValue);
 
+      // Check if the find pattern is found in the current URL
+      if (!currentUrl.match(findPattern)) {
+        window.alert("Find pattern not found in the current URL.");
+        return;
+      }
+
+      const newUrl = currentUrl.replace(findPattern, replaceValue);
       chrome.tabs.update(tabs[0].id, { url: newUrl });
     });
   });
