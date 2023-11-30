@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+}
+
+#presets-list div {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    margin-right: 5px;
+}
+
+button {
+    margin-right: 5px;
+}

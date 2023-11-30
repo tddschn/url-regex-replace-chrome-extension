@@ -2,15 +2,33 @@
 <html>
   <head>
     <title>URL Regex Replace</title>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
     <script src="popup.js"></script>
   </head>
   <body>
-    <label for="find">Find (Regex):</label>
-    <input type="text" id="find" value="^" />
-    <br />
-    <label for="replace">Replace:</label>
-    <input type="text" id="replace" />
-    <br /><br />
-    <button id="replace-url">Replace in URL</button>
+    <!-- Tab interface -->
+    <div class="tab">
+      <button class="tablinks" id="replaceTab">Replace</button>
+      <button class="tablinks" id="presetsTab">Presets</button>
+    </div>
+
+    <!-- Tab content for Replace -->
+    <div id="Replace" class="tabcontent">
+      <label for="find">Find (Regex):</label>
+      <input type="text" id="find" value="^" />
+      <br />
+      <label for="replace">Replace:</label>
+      <input type="text" id="replace" />
+      <br /><br />
+      <button id="replace-url">Replace in URL</button>
+    </div>
+
+    <!-- Tab content for Presets -->
+    <div id="Presets" class="tabcontent">
+      <h2>Presets</h2>
+      <div id="presets-container">
+        <!-- Presets will be loaded here -->
+      </div>
+    </div>
   </body>
 </html>
