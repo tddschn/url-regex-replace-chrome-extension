@@ -35,7 +35,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const newUrl = currentUrl.replace(findPattern, replaceValue);
-      chrome.tabs.update(tabs[0].id, { url: newUrl });
+
+      // Define the function to push the URL to history and navigate forward
+      function pushUrlToHistory() {
+        window.history.pushState({}, "", currentUrl);
+        window.history.forward();
+      }
+
+      // Use chrome.scripting.executeScript to run the script
+      chrome.scripting.executeScript(
+        {
+          target: { tabId: tabs[0].id },
+          func: pushUrlToHistory,
+        },
+        function () {
+          chrome.tabs.update(tabs[0].id, { url: newUrl });
+        }
+      );
     });
   });
 });
