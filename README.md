@@ -1,37 +1,32 @@
-# Prepend URL Chrome Extension
+# URL Regex Replace Chrome Extension
 
-![Prepend URL Icon](icons/icon.png)
+![URL Regex Replace Icon](icons/icon.png)
 
-The **Prepend URL** is a handy Chrome extension that allows users to add a pre-defined prefix to the current tab's URL and reload the page with the new URL. This is particularly useful for quick navigation to mirror sites, proxies, or any other use case where modifying the URL with a prefix is needed.
+The **URL Regex Replace** is a Chrome extension that allows users to perform regex find and replace on the current tab's URL. This is useful for various tasks such as quickly modifying URLs, testing, or redirecting to different environments.
 
 ## Features
 
 - Simple and lightweight.
-- Easy to use with a single click.
-- Customizable URL prefix.
+- Ability to use regular expressions for URL modifications.
+- Customizable find and replace fields.
 
 ## Installation
 
-You can install the **Prepend URL** extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/prepend-url/nkohlbebkognioabnnjchnchdapolofb).
+You can install the **URL Regex Replace** extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/url-regex-replace/nkohlbebkognioabnnjchnchdapolofb).
 
 ## Usage
 
 1. Click on the extension icon in the toolbar.
-2. Enter the prefix you want to prepend to the URL in the input field.
-3. Click on the "Prepend URL" button to update the current tab's URL.
-
-## Screenshots
-
-![Screenshot 1](screenshots/screenshot-1.png)
-![Screenshot 2](screenshots/screenshot-2.png)
+2. Enter the regex pattern in the 'Find' field and the replacement string in the 'Replace' field.
+3. Click on the "Replace in URL" button to update the current tab's URL based on your regex pattern.
 
 ## Development
 
-If you're interested in contributing to the development of this extension, you can clone the repository and load it locally as an unpacked extension in Chrome.
+To contribute to the development of this extension, clone the repository and load it locally as an unpacked extension in Chrome.
 
 ## Building the Extension
 
-A `Makefile` is included for packaging the extension. Use the following commands:
+Use the included `Makefile` for packaging:
 
 - `make package` to create a zip file for distribution.
 - `make list` to list the contents of the zip package.
@@ -39,13 +34,7 @@ A `Makefile` is included for packaging the extension. Use the following commands
 
 ## Support
 
-Open an issue [here](https://github.com/tddschn/prepend-url-chrome-extension/issues/new).
-
-<!-- If you encounter any issues or have suggestions for improvements, please submit them to the [issue tracker](https://chrome.google.com/webstore/detail/prepend-url/nkohlbebkognioabnnjchnchdapolofb/support). -->
-
-<!-- ## License -->
-<!---->
-<!-- This project is open-source and available under the [MIT License](LICENSE.md). -->
+Open an issue [here](https://github.com/tddschn/url-regex-replace-chrome-extension/issues/new).
 
 ## Changelog
 
