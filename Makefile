@@ -14,4 +14,9 @@ clean:
 	[[ -f $(EXTENSION_NAME)-$(VERSION).zip ]] && rm -v $(EXTENSION_NAME)-$(VERSION).zip || echo "No $(EXTENSION_NAME)-$(VERSION).zip to remove."
 	# @rm -v $(EXTENSION_NAME)-$(VERSION).zip
 
+clean-all:
+	# @echo "Removing all $(EXTENSION_NAME)-*.zip..."
+	# @rm -v $(EXTENSION_NAME)-*.zip
+	fd -HI -e zip -x rm -v {}
+
 .PHONY: package list clean
