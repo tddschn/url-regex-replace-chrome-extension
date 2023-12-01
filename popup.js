@@ -94,7 +94,6 @@ function applyPreset(preset) {
     const replaceValue = preset.replace;
     const currentUrl = tabs[0].url;
 
-    // Check if the find pattern is found in the current URL
     if (!currentUrl.match(findPattern)) {
       window.alert("Find pattern not found in the current URL.");
       return;
@@ -102,16 +101,7 @@ function applyPreset(preset) {
 
     const newUrl = currentUrl.replace(findPattern, replaceValue);
 
-    // Define the function to update the URL
-    function updateUrl() {
-      chrome.tabs.update(tabs[0].id, { url: newUrl });
-    }
-
-    // Use chrome.scripting.executeScript to run the script
-    chrome.scripting.executeScript({
-      target: { tabId: tabs[0].id },
-      func: updateUrl,
-    });
+    chrome.tabs.update(tabs[0].id, { url: newUrl });
   });
 }
 
