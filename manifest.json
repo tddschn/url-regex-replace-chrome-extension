@@ -4,7 +4,7 @@
   },
   "manifest_version": 3,
   "name": "URL Regex Replace",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "A Chrome extension that allows users to perform regex find and replace on the current tab's URL.",
   "permissions": ["activeTab", "storage", "scripting"],
   "options_page": "options.html",
