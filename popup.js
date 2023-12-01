@@ -55,6 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   loadPresetsForPopup();
+  chrome.storage.sync.get(["lastActiveTab"], function (data) {
+    if (data.lastActiveTab) {
+      openTab(new Event("click"), data.lastActiveTab);
+    } else {
+      openTab(new Event("click"), "Replace"); // Default tab
+    }
+  });
 });
 
 function loadPresetsForPopup() {
@@ -94,7 +101,6 @@ function applyPreset(preset) {
     const replaceValue = preset.replace;
     const currentUrl = tabs[0].url;
 
-    // Check if the find pattern is found in the current URL
     if (!currentUrl.match(findPattern)) {
       window.alert("Find pattern not found in the current URL.");
       return;
@@ -102,16 +108,7 @@ function applyPreset(preset) {
 
     const newUrl = currentUrl.replace(findPattern, replaceValue);
 
-    // Define the function to update the URL
-    function updateUrl() {
-      chrome.tabs.update(tabs[0].id, { url: newUrl });
-    }
-
-    // Use chrome.scripting.executeScript to run the script
-    chrome.scripting.executeScript({
-      target: { tabId: tabs[0].id },
-      func: updateUrl,
-    });
+    chrome.tabs.update(tabs[0].id, { url: newUrl });
   });
 }
 
@@ -135,6 +132,7 @@ function openTab(evt, tabName) {
   if (evt && evt.currentTarget) {
     evt.currentTarget.classList.add("active");
   }
+  chrome.storage.sync.set({ lastActiveTab: tabName });
 }
 
 // Example usage: Add event listeners to tab buttons
