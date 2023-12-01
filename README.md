@@ -12,6 +12,21 @@ The **URL Regex Replace** is a Chrome extension that allows users to perform reg
 - **New:** Manage a list of frequently-used find and replace pairs via the options page.
 - **New:** Enhanced popup with two tabs: 'Replace' for manual entry and 'Presets' for quick application of saved pairs.
 
+## Screenshots
+
+Replacing `^https://` with `https://sourcegraph.com/` on a GitHub repository URL:
+
+![Replace Tab](screenshots/replace-1.png)
+![Replace Tab](screenshots/replace-2.png)
+
+User-configurable find-and-replace pairs (presets):
+
+![Presets Tab](screenshots/presets.png)
+
+Options page for managing presets:
+
+![Options Page](screenshots/options.png)
+
 ## Installation
 
 Install the **URL Regex Replace** extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/url-regex-replace/nkohlbebkognioabnnjchnchdapolofb).
