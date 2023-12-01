@@ -2,23 +2,35 @@
 
 ![URL Regex Replace Icon](icons/icon.png)
 
-The **URL Regex Replace** is a Chrome extension that allows users to perform regex find and replace on the current tab's URL. This is useful for various tasks such as quickly modifying URLs, testing, or redirecting to different environments.
+The **URL Regex Replace** is a Chrome extension that allows users to perform regex find and replace on the current tab's URL. This extension is useful for modifying URLs, testing, or redirecting to different environments. It now includes an options page for managing frequently-used find and replace pairs and a revamped popup with two tabs for ease of use.
 
 ## Features
 
 - Simple and lightweight.
 - Ability to use regular expressions for URL modifications.
 - Customizable find and replace fields.
+- **New:** Manage a list of frequently-used find and replace pairs via the options page.
+- **New:** Enhanced popup with two tabs: 'Replace' for manual entry and 'Presets' for quick application of saved pairs.
 
 ## Installation
 
-You can install the **URL Regex Replace** extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/url-regex-replace/nkohlbebkognioabnnjchnchdapolofb).
+Install the **URL Regex Replace** extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/url-regex-replace/nkohlbebkognioabnnjchnchdapolofb).
 
 ## Usage
 
+### Basic Usage
 1. Click on the extension icon in the toolbar.
-2. Enter the regex pattern in the 'Find' field and the replacement string in the 'Replace' field.
+2. In the 'Replace' tab, enter the regex pattern in the 'Find' field and the replacement string in the 'Replace' field.
 3. Click on the "Replace in URL" button to update the current tab's URL based on your regex pattern.
+
+### Using Presets
+1. Go to the 'Presets' tab in the popup.
+2. Click on any of the saved find and replace pairs to apply them to the current tab's URL.
+
+### Managing Presets
+- **Access Options Page:** Right-click on the extension icon and select 'Options'.
+- **Add New Pair:** Use the form at the top of the options page.
+- **Edit, Delete, or Reorder Pairs:** Select one or more pairs and choose the appropriate action.
 
 ## Development
 
