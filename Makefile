@@ -1,4 +1,4 @@
-EXTENSION_NAME := prepend-url
+EXTENSION_NAME := url-regex-replace
 VERSION := $(shell jq -r '.version' manifest.json)
 
 package: clean
