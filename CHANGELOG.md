@@ -1,18 +1,29 @@
 # Changelog
 
 - [Changelog](#changelog)
-  - [v1.2.0](#v120)
+  - [v1.3.0](#v130)
     - [Added](#added)
     - [Changed](#changed)
-    - [Fixed](#fixed)
-    - [Removed](#removed)
-    - [Security](#security)
-  - [v1.1.0](#v110)
+  - [v1.2.0](#v120)
     - [Added](#added-1)
     - [Changed](#changed-1)
-    - [Fixed](#fixed-1)
-    - [Removed](#removed-1)
-    - [Security](#security-1)
+  - [v1.1.0](#v110)
+    - [Added](#added-2)
+    - [Changed](#changed-2)
+
+## v1.3.0
+
+### Added
+- Options page for managing frequently-used find and replace pairs.
+- Preset find and replace pairs upon installation: 
+  - Replace '^' with 'https://archive.is'.
+  - Replace '^https://' with 'https://sourcegraph.com/'.
+- 'Presets' tab in the popup, displaying the list of stored find and replace pairs, and enabling quick application of these pairs.
+
+### Changed
+- Updated `popup.html` and `popup.js` to include the 'Presets' tab and functionality.
+- Altered `options.html` and `options.js` to manage and store the find and replace pairs.
+
 
 ## v1.2.0
 
@@ -25,14 +36,6 @@
 - Modified `popup.html` to include new input fields for regex find and replace.
 - Altered `manifest.json` to update the extension description and version.
 
-### Fixed
-- None
-
-### Removed
-- Previous functionality for prefixing URLs.
-
-### Security
-- None
 
 ## v1.1.0
 
@@ -41,12 +44,3 @@
 
 ### Changed
 - Updated `popup.js` to include event listeners for loading the stored prefix value when the popup loads, and for saving the prefix value whenever it is changed by the user.
-
-### Fixed
-- None
-
-### Removed
-- None
-
-### Security
-- None
