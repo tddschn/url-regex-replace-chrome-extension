@@ -3,7 +3,7 @@ VERSION := $(shell jq -r '.version' manifest.json)
 
 package: clean
 	@echo "Packaging $(EXTENSION_NAME) version $(VERSION)..."
-	@zip -qr $(EXTENSION_NAME)-$(VERSION).zip * --exclude '.*' 'images/*' Makefile 'node_modules/*' 'package.json' 'package-lock.json' 
+	@zip -qr $(EXTENSION_NAME)-$(VERSION).zip * --exclude '.*' 'images/*' Makefile 'node_modules/*' 'package.json' 'package-lock.json'  '*.zip'
 	@echo "Package created: $(EXTENSION_NAME)-$(VERSION).zip"
 
 list:
