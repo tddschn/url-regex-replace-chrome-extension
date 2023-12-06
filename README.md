@@ -40,6 +40,7 @@ Install the **URL Regex Replace** extension from the [Chrome Web Store](https://
 > If you were using the previous version of this extension, also called `Prepend URL Chrome Extension`, the feature is still there! Just use the `^` character in the 'Find' field and the string you want to prepend in the 'Replace' field.
 
 
+
 ### Basic Usage
 1. Click on the extension icon in the toolbar.
 2. In the 'Replace' tab, enter the regex pattern in the 'Find' field and the replacement string in the 'Replace' field.
