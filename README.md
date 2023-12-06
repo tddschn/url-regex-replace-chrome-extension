@@ -29,10 +29,10 @@ Options page for managing presets:
 
 ## Installation
 
-> [!NOTE]
-> The store link below is outdated - will update when the review passes.
+<!-- > [!NOTE] -->
+<!-- > The store link below is outdated - will update when the review passes. -->
 
-Install the **URL Regex Replace** extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/url-regex-replace/nkohlbebkognioabnnjchnchdapolofb).
+Install the **URL Regex Replace** extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/url-regex-replace/nkohlbebkognioabnnjchnchdapolofb).
 
 ## Usage
 
