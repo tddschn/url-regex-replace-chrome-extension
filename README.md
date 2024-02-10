@@ -11,6 +11,7 @@ The **URL Regex Replace** is a Chrome extension that allows users to perform reg
 - Customizable find and replace fields.
 - **New:** Manage a list of frequently-used find and replace pairs via the options page.
 - **New:** Enhanced popup with two tabs: 'Replace' for manual entry and 'Presets' for quick application of saved pairs.
+- **New:** Support for keyboard shortcuts
 
 ## Screenshots
 
@@ -46,6 +47,11 @@ Install the **URL Regex Replace** extension from the [Chrome Web Store](https://
 2. In the 'Replace' tab, enter the regex pattern in the 'Find' field and the replacement string in the 'Replace' field.
 3. Click on the "Replace in URL" button to update the current tab's URL based on your regex pattern.
 
+### Keyboard Shortcuts
+- You can use the shortcut `Alt+2` to invoke the extension popup.
+- You can use the shortcut `Alt+3` to emulate clicking on the "Replace in URL" button.
+- These shortcuts can be modified by navigating to chrome://extensions/shortcuts
+
 ### Using Presets
 1. Go to the 'Presets' tab in the popup.
 2. Click on any of the saved find and replace pairs to apply them to the current tab's URL.
@@ -54,6 +60,14 @@ Install the **URL Regex Replace** extension from the [Chrome Web Store](https://
 - **Access Options Page:** Right-click on the extension icon and select 'Options'.
 - **Add New Pair:** Use the form at the top of the options page.
 - **Edit, Delete, or Reorder Pairs:** Select one or more pairs and choose the appropriate action.
+
+### Using Regular expression capture groups
+The value in the "Replace" field may include a reference to a regex capture group.  
+For example if the following is the value of the "Find (Regex):" field:
+    `^https:\/\/mydomain.com\/(.*)$`
+
+The following "Replace" value would preserve all of the URL after the domain:
+    `https://mydomain-test.com/$1`
 
 ## Development
 

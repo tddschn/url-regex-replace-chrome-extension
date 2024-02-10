@@ -12,3 +12,11 @@ chrome.runtime.onInstalled.addListener(function (details) {
     // Handle update-related tasks, if any
   }
 });
+
+// Listen for keyboard shortcut to replace the URL
+chrome.commands.onCommand.addListener(function(command) {
+  if (command === "replace-url") {
+    // Set a flag that the popup can check
+    chrome.storage.local.set({replaceUrlTriggered: true});
+  }
+});

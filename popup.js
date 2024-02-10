@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const replaceInput = document.getElementById("replace");
   const replaceButton = document.getElementById("replace-url");
 
+  // Initialize the flag used to check for "ReplaceURL" keyboard shortcut
+  chrome.storage.local.set({replaceUrlTriggered: false});
+
   // Load the saved find and replace values.
   chrome.storage.sync.get(["savedFind", "savedReplace"], function (data) {
     if (data.savedFind) {
@@ -23,39 +26,55 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   replaceButton.addEventListener("click", function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      const findPattern = new RegExp(findInput.value);
-      const replaceValue = replaceInput.value;
-      const currentUrl = tabs[0].url;
+    replaceUrl(findInput.value, replaceInput.value);
+   });
 
-      // Check if the find pattern is found in the current URL
-      if (!currentUrl.match(findPattern)) {
-        window.alert("Find pattern not found in the current URL.");
-        return;
+  // Listen for Replace in URL keyboard shortcut
+  chrome.storage.onChanged.addListener(function(changes) {
+    for (let [key, { newValue }] of Object.entries(changes)) {
+      if (key === "replaceUrlTriggered" && newValue === true) {
+        // Perform the action as if the replace-url button was clicked
+        replaceUrl(findInput.value, replaceInput.value);
+        // Reset the flag immediately to prevent re-triggering
+        chrome.storage.local.set({replaceUrlTriggered: false});
       }
-
-      const newUrl = currentUrl.replace(findPattern, replaceValue);
-
-      // Define the function to push the URL to history and navigate forward
-      function pushUrlToHistory() {
-        window.history.pushState({}, "", currentUrl);
-        window.history.forward();
-      }
-
-      // Use chrome.scripting.executeScript to run the script
-      chrome.scripting.executeScript(
-        {
-          target: { tabId: tabs[0].id },
-          func: pushUrlToHistory,
-        },
-        function () {
-          chrome.tabs.update(tabs[0].id, { url: newUrl });
-        }
-      );
-    });
+    }
   });
+
   loadPresetsForPopup();
 });
+
+function replaceUrl(searchExp, replaceValue) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    const findPattern = new RegExp(searchExp);
+    const currentUrl = tabs[0].url;
+
+    // Check if the find pattern is found in the current URL
+    if (!currentUrl.match(findPattern)) {
+      window.alert("Find pattern not found in the current URL.");
+      return;
+    }
+
+    const newUrl = currentUrl.replace(findPattern, replaceValue);
+
+    // Define the function to push the URL to history and navigate forward
+    function pushUrlToHistory() {
+      window.history.pushState({}, "", currentUrl);
+      window.history.forward();
+    }
+
+    // Use chrome.scripting.executeScript to run the script
+    chrome.scripting.executeScript(
+      {
+        target: { tabId: tabs[0].id },
+        func: pushUrlToHistory,
+      },
+      function () {
+        chrome.tabs.update(tabs[0].id, { url: newUrl });
+      }
+    );
+  });
+}
 
 function loadPresetsForPopup() {
   chrome.storage.sync.get(["presets"], function (data) {
