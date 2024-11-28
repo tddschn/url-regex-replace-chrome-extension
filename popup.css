@@ -33,3 +33,18 @@
   border: 1px solid #ccc;
   border-top: none;
 }
+
+/* Set the width of the popup */
+body {
+  width: 400px;
+  /* ...existing styles... */
+}
+
+/* Style the preset buttons */
+#presets-container button {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 5px;
+  padding: 10px;
+  font-size: 14px;
+}

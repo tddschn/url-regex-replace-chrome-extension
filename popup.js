@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   loadPresetsForPopup();
+  // Open the default tab (now "Presets" instead of "Replace")
+  openTab(new Event("click"), "Presets");
 });
 
 function loadPresetsForPopup() {
@@ -65,9 +67,9 @@ function loadPresetsForPopup() {
 
     presets.forEach((preset) => {
       const presetElement = document.createElement("button");
-      presetElement.textContent = preset.description
-        ? preset.description
-        : `${preset.find} ➔ ${preset.replace}`;
+      presetElement.innerHTML = preset.description
+        ? `<strong>${preset.description}</strong><br/><small>${preset.find} -> ${preset.replace}</small>`
+      : `${preset.find} -> ${preset.replace}`;
       presetElement.addEventListener("click", function () {
         applyPreset(preset);
       });
