@@ -1,22 +1,27 @@
 [
   {
     "find": "^",
-    "replace": "https://web.archive.org/web/"
+    "replace": "https://web.archive.org/web/",
+    "description": "Redirect to the Wayback Machine"
   },
   {
     "find": "^",
-    "replace": "https://archive.is/"
+    "replace": "https://archive.is/",
+    "description": "Redirect to Archive.is"
   },
   {
     "find": "^https://",
-    "replace": "https://sourcegraph.com/"
+    "replace": "https://sourcegraph.com/",
+    "description": "View on Sourcegraph"
   },
   {
     "find": "^",
-    "replace": "https://freedium.cfd/"
+    "replace": "https://freedium.cfd/",
+    "description": "Access via Freedium"
   },
   {
     "find": "^",
-    "replace": "https://sci-hub.se/"
+    "replace": "https://sci-hub.se/",
+    "description": "Access via Sci-Hub"
   }
 ]

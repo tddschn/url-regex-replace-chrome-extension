@@ -63,9 +63,11 @@ function loadPresetsForPopup() {
     const presetsContainer = document.getElementById("presets-container");
     presetsContainer.innerHTML = ""; // Clear current list
 
-    presets.forEach((preset, index) => {
+    presets.forEach((preset) => {
       const presetElement = document.createElement("button");
-      presetElement.textContent = `Use: ${preset.find} -> ${preset.replace}`;
+      presetElement.textContent = preset.description
+        ? preset.description
+        : `${preset.find} ➔ ${preset.replace}`;
       presetElement.addEventListener("click", function () {
         applyPreset(preset);
       });

@@ -12,6 +12,7 @@ The **URL Regex Replace** is a Chrome extension that allows users to perform reg
 - **New:** Manage a list of frequently-used find and replace pairs via the options page.
 - **New:** Enhanced popup with two tabs: 'Replace' for manual entry and 'Presets' for quick application of saved pairs.
 - **New:** Export presets with a filename that includes the extension name and timestamp.
+- **New:** Reset presets to default values.
 
 ## Screenshots
 
@@ -55,6 +56,7 @@ Install the **URL Regex Replace** extension from the [Chrome Web Store](https://
 - **Edit, Delete, or Reorder Pairs:** Select one or more pairs and choose the appropriate action.
 - **Export Presets:** Click the "Export Presets" button to download the presets as a JSON file. The filename will include the extension name and a timestamp.
 - **Import Presets:** Use the file input to upload a JSON file containing presets.
+- **Reset to Defaults:** Click the "Reset to Defaults" button to restore the default presets.
 
 ## Development
 

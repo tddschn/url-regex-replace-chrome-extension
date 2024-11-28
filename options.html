@@ -11,12 +11,14 @@
     <form id="preset-form">
       <input type="text" id="find-pattern" placeholder="Find Pattern (Regex)" />
       <input type="text" id="replace-pattern" placeholder="Replace With" />
+      <input type="text" id="description" placeholder="Description (Optional)" />
       <input type="hidden" id="editing-index" />
       <button type="submit">Save Preset</button>
     </form>
     <br />
     <button id="export-button">Export Presets</button>
     <input type="file" id="import-file" accept=".json" />
+    <button id="reset-button">Reset to Defaults</button>
     <script src="options.js"></script>
   </body>
 </html>
