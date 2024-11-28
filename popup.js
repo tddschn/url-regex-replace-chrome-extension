@@ -54,6 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   });
+
+  // Listen for messages from background.js to switch tabs
+  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.action === "switchTab") {
+      openTab(null, request.tabName);
+    }
+  });
+
   loadPresetsForPopup();
   // Open the default tab (now "Presets" instead of "Replace")
   openTab(new Event("click"), "Presets");
@@ -128,6 +136,9 @@ function openTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   if (evt && evt.currentTarget) {
     evt.currentTarget.classList.add("active");
+  } else {
+    // When switching via message, update the active tab button
+    document.querySelector(`.tablinks#${tabName.toLowerCase()}Tab`).classList.add("active");
   }
 }
 

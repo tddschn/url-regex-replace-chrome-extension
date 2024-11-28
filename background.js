@@ -14,3 +14,11 @@ chrome.runtime.onInstalled.addListener(function (details) {
     // Handle update-related tasks, if any
   }
 });
+
+chrome.commands.onCommand.addListener(function (command) {
+  if (command === "switch-to-replace-tab" || command === "switch-to-presets-tab") {
+    const tabName = command === "switch-to-replace-tab" ? "Replace" : "Presets";
+    // Send a message to the popup (if it's open)
+    chrome.runtime.sendMessage({ action: "switchTab", tabName: tabName });
+  }
+});

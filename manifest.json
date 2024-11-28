@@ -13,5 +13,21 @@
   },
   "icons": {
     "128": "icons/icon.png"
+  },
+  "commands": {
+    "switch-to-replace-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1",
+        "mac": "Command+Shift+1"
+      },
+      "description": "Switch to the Replace tab"
+    },
+    "switch-to-presets-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2",
+        "mac": "Command+Shift+2"
+      },
+      "description": "Switch to the Presets tab"
+    }
   }
 }

@@ -58,6 +58,13 @@ Install the **URL Regex Replace** extension from the [Chrome Web Store](https://
 - **Import Presets:** Use the file input to upload a JSON file containing presets.
 - **Reset to Defaults:** Click the "Reset to Defaults" button to restore the default presets.
 
+### Keyboard Shortcuts
+
+When the extension popup is open, you can use the following keyboard shortcuts to switch between tabs:
+
+- **Switch to Replace Tab:** `Ctrl+Shift+1` (Windows/Linux) or `Command+Shift+1` (macOS)
+- **Switch to Presets Tab:** `Ctrl+Shift+2` (Windows/Linux) or `Command+Shift+2` (macOS)
+
 ## Development
 
 To contribute to the development of this extension, clone the repository and load it locally as an unpacked extension in Chrome.
