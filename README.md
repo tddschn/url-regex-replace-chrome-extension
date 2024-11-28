@@ -11,6 +11,7 @@ The **URL Regex Replace** is a Chrome extension that allows users to perform reg
 - Customizable find and replace fields.
 - **New:** Manage a list of frequently-used find and replace pairs via the options page.
 - **New:** Enhanced popup with two tabs: 'Replace' for manual entry and 'Presets' for quick application of saved pairs.
+- **New:** Export presets with a filename that includes the extension name and timestamp.
 
 ## Screenshots
 
@@ -39,8 +40,6 @@ Install the **URL Regex Replace** extension from the [Chrome Web Store](https://
 > [!TIP]
 > If you were using the previous version of this extension, also called `Prepend URL Chrome Extension`, the feature is still there! Just use the `^` character in the 'Find' field and the string you want to prepend in the 'Replace' field.
 
-
-
 ### Basic Usage
 1. Click on the extension icon in the toolbar.
 2. In the 'Replace' tab, enter the regex pattern in the 'Find' field and the replacement string in the 'Replace' field.
@@ -54,6 +53,8 @@ Install the **URL Regex Replace** extension from the [Chrome Web Store](https://
 - **Access Options Page:** Right-click on the extension icon and select 'Options'.
 - **Add New Pair:** Use the form at the top of the options page.
 - **Edit, Delete, or Reorder Pairs:** Select one or more pairs and choose the appropriate action.
+- **Export Presets:** Click the "Export Presets" button to download the presets as a JSON file. The filename will include the extension name and a timestamp.
+- **Import Presets:** Use the file input to upload a JSON file containing presets.
 
 ## Development
 
