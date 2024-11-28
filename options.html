@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Manage Presets</title>
-    <link rel="stylesheet" type="text/css" href="options.css">
-    <script src="options.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="options.css" />
+  </head>
+  <body>
     <h1>Manage Find and Replace Presets</h1>
     <div id="presets-list"></div>
     <h2>Add/Edit Preset</h2>
     <form id="preset-form">
-        <input type="text" id="find-pattern" placeholder="Find Pattern (Regex)">
-        <input type="text" id="replace-pattern" placeholder="Replace With">
-        <input type="hidden" id="editing-index">
-        <button type="submit">Save Preset</button>
+      <input type="text" id="find-pattern" placeholder="Find Pattern (Regex)" />
+      <input type="text" id="replace-pattern" placeholder="Replace With" />
+      <input type="hidden" id="editing-index" />
+      <button type="submit">Save Preset</button>
     </form>
-</body>
+    <br />
+    <button id="export-button">Export Presets</button>
+    <input type="file" id="import-file" accept=".json" />
+    <script src="options.js"></script>
+  </body>
 </html>
